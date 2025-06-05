@@ -49,6 +49,10 @@
     {{- if eq ($.Scratch.Get "isDisqus") true -}}
     {{- partial "disqus.html" . -}}
     {{- end -}}
+    <!-- Giscus -->
+     {{if .Params.giscus}}
+     {{ partial "giscus.html" . }}
+     {{end}}
   </article>
 </main>
 {{ end }}
