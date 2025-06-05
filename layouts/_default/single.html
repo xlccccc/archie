@@ -8,6 +8,9 @@
           <h1 class="title">{{ .Title }}</h1>
           <div class="meta">Posted on {{ dateFormat ":date_medium" .Date }}{{ if .Draft }} <span class="draft-label">DRAFT</span> {{ end }}</div>
         </div>
+        <div class="toc-wrapper">
+          {{ partial "toc.html" . }}
+        </div>
         {{ if isset .Params "tldr" }}
         <div class="tldr">
           <strong>tl;dr:</strong>
@@ -31,13 +34,6 @@
         </div>
       </div>
 
-      <!-- TOC -->
-      {{ if isset .Params "toc" }}
-      <div class="toc">
-        <strong>Table of contents:</strong>
-        {{ .TableOfContents }}
-      </div>
-      {{ end }}
     </div>
 
     <!-- Disqus -->

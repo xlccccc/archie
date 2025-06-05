@@ -1,0 +1,12 @@
+{{ if (.Params.toc | default true ) }}
+<div class="post-toc" id="post-toc">
+<aside>
+    <header>
+    <h1>{{.Title}}</h1>
+    </header>
+    {{.TableOfContents}}
+</aside>
+<a href="#" id="toc-toggle"></a>
+</div>
+
+{{ end }}
